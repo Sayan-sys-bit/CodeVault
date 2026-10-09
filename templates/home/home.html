@@ -1,0 +1,311 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block name %}{% endblock %}
+
+{% block homeactive %}active{% endblock %}
+
+{% block body %}
+
+<style>
+    .home-page {
+        min-height: 100vh;
+        background:
+            linear-gradient(
+                rgba(5, 10, 25, 0.55),
+                rgba(5, 10, 25, 0.70)
+            ),
+            url("{% static 'images/home-bg.jpg' %}");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .welcome-section {
+        padding: 60px 7%;
+        color: #ffffff;
+    }
+
+    .brand-label {
+        display: inline-block;
+        color: #93c5fd;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .welcome-section h2 {
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+        font-weight: 500;
+        line-height: 1.25;
+        margin-bottom: 25px;
+    }
+
+    .welcome-section h2 span {
+        color: #60a5fa;
+    }
+
+    .welcome-section > p {
+        max-width: 540px;
+        color: #e5e7eb;
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .feature-list span {
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        font-size: 14px;
+    }
+
+    .login-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 7%;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 430px;
+        padding: 38px;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 22px;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.30);
+    }
+
+    .login-card h2 {
+        font-size: 2rem;
+        font-weight: 750;
+        margin-bottom: 10px;
+    }
+
+    .login-card > p {
+        color: #d1d5db;
+        margin-bottom: 28px;
+    }
+
+    .login-card .form-label {
+        color: #f3f4f6;
+        font-weight: 500;
+    }
+
+    .login-card .form-control {
+        min-height: 46px;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+    }
+
+    .login-card .form-control::placeholder {
+        color: #cbd5e1;
+    }
+
+    .login-card .form-control:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.2);
+    }
+
+    .login-card .btn-primary {
+        min-height: 46px;
+        border: none;
+        border-radius: 10px;
+        background: #2563eb;
+        font-weight: 600;
+    }
+
+    .login-card .btn-primary:hover {
+        background: #1d4ed8;
+    }
+
+    .signup-text {
+        text-align: center;
+        color: #e5e7eb;
+    }
+
+    .signup-text a {
+        color: #93c5fd;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .signup-text a:hover {
+        text-decoration: underline;
+    }
+
+    .home-action-btn {
+        margin: 6px 8px 6px 0;
+        padding: 11px 22px;
+        border-radius: 9px;
+    }
+
+    
+.books-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.programming-books-image {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    filter: drop-shadow(0 0 25px rgba(96, 165, 250, 0.25));
+}
+
+@media (max-width: 991px) {
+    .books-image-section {
+        padding: 10px 8% 45px;
+    }
+
+    .programming-books-image {
+        max-width: 400px;
+    }
+}
+
+    @media (max-width: 991px) {
+        .welcome-section {
+            padding: 65px 8% 25px;
+        }
+
+        .login-section {
+            padding: 25px 8% 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .login-card {
+            padding: 26px 20px;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.2rem;
+        }
+    }
+</style>
+
+<div class="home-page">
+    <div class="container-fluid">
+        <div class="row min-vh-100 align-items-center">
+
+            <!-- Welcome Section -->
+            <div class="col-lg-6 welcome-section">
+                <span class="brand-label">WELCOME TO CODEVAULT</span>
+
+                <h2>
+                    Learn || Read || Build
+                    <span><br>All in One Place.</span>
+                </h2>
+
+                <p>
+                    Explore programming books, standard textbooks,
+                    PDF resources, and learning materials for
+                    Java, Python, C, C++, and more.
+                </p>
+
+                <div class="mt-4">
+                    <a href="{% url 'login' %}"
+                       class="btn btn-primary home-action-btn">
+                        Explore Resources
+                    </a>
+
+                    <a href="{% url 'about' %}"
+                       class="btn btn-outline-light home-action-btn">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="feature-list mt-5">
+                    <span>📚 Programming Books</span>
+                    <span>💻 Multiple Languages</span>
+                    <span>📖 Learning Resources</span>
+                </div>
+            </div>
+
+            
+<!-- Programming Books Image -->
+<div class="col-lg-6 books-image-section">
+    <img
+        src="{% static 'images/programming-books.jpeg' %}"
+        alt="Programming books for C, Java and Python"
+        class="programming-books-image">
+</div>
+
+            {% comment %} <!-- Login Section -->
+            <div class="col-lg-6 login-section">
+                <div class="login-card">
+                    <h2>Welcome Back</h2>
+
+                    <p>Login to continue your learning journey.</p>
+
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your username"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Login
+                        </button>
+                    </form>
+
+                    <div class="signup-text mt-4">
+                        Don't have an account?
+                        <a href="{% url 'signup' %}">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> {% endcomment %}
+
+{% endblock %}

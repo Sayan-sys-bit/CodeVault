@@ -1,0 +1,235 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Upload Resource | CodeVault{% endblock %}
+
+{% block body %}
+<style>
+    .upload-page {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px 18px;
+        background:
+            linear-gradient(rgba(5, 10, 25, 0.48), rgba(5, 10, 25, 0.65)),
+            url("/static/images/pngtree-notebook-computer-electronic-equipment-science-and-technology-particles-picture-image_1677481.jpg")
+            center center / cover no-repeat;
+        border-radius: 18px;
+    }
+
+    .upload-card {
+        width: 100%;
+        max-width: 520px;
+        padding: 36px;
+        color: #f8fafc;
+        background: rgba(15, 25, 48, 0.78);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(148, 180, 255, 0.28);
+        border-radius: 22px;
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.35),
+            0 0 30px rgba(59, 130, 246, 0.10);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .upload-card:hover {
+        border-color: rgba(129, 140, 248, 0.48);
+        box-shadow:
+            0 28px 75px rgba(0, 0, 0, 0.42),
+            0 0 35px rgba(99, 102, 241, 0.16);
+    }
+
+    .upload-logo {
+        width: 190px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        font-size: 27px;
+        font-weight: 800;
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.30);
+    }
+
+    .upload-card h2 {
+        font-size: 28px;
+        font-weight: 750;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .upload-subtitle {
+        color: #aab5cc;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .upload-card .form-label {
+        color: #dce5f5;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    .upload-card .form-control {
+        padding: 11px 13px;
+        color: #f8fafc;
+        background: #111a2e;
+        border: 1px solid #34415d;
+        border-radius: 11px;
+    }
+
+    .upload-card textarea.form-control {
+        min-height: 105px;
+        resize: vertical;
+    }
+
+    .upload-card .form-control::placeholder {
+        color: #8290aa;
+    }
+
+    .upload-card .form-control:focus {
+        background: #111a2e;
+        color: #fff;
+        border-color: #818cf8;
+        box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.17);
+    }
+
+    .upload-card input[type="file"] {
+        padding: 9px;
+    }
+
+    .upload-card input[type="file"]::file-selector-button {
+        color: #fff;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        border: none;
+        border-radius: 7px;
+        padding: 7px 12px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+
+    .file-note {
+        color: #aab5cc;
+        font-size: 12px;
+        margin-top: 7px;
+    }
+
+    .upload-btn {
+        width: 100%;
+        padding: 13px;
+        margin-top: 7px;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 11px;
+        background: linear-gradient(100deg, #3b82f6, #8b5cf6);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .upload-btn:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(99, 102, 241, 0.42);
+        filter: brightness(1.08);
+    }
+
+    .upload-footer {
+        color: #aab5cc;
+        text-align: center;
+        margin: 22px 0 0;
+        font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+        .upload-card {
+            padding: 28px 22px;
+        }
+
+        .upload-card h2 {
+            font-size: 25px;
+        }
+    }
+</style>
+
+<div class="upload-page">
+    <div class="upload-card">
+        <div class="upload-logo">CodeVault</div>
+
+        <h2>Share a Resource</h2>
+        <p class="upload-subtitle">
+            Share useful study materials with the CodeVault community.
+        </p>
+
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        {% if success %}
+            <div class="alert alert-success" role="alert">
+                {{ success }}
+            </div>
+        {% endif %}
+
+        <form method="POST"
+              action="{% url 'upload_resource' %}"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Resource Title</label>
+                <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    class="form-control"
+                    placeholder="e.g. Python Programming"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                    name="description"
+                    id="description"
+                    class="form-control"
+                    placeholder="Describe what this resource contains..."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="file" class="form-label">Choose Your File</label>
+                <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    class="form-control"
+                    accept=".pdf,.txt,.docx,.pptx"
+                    required
+                >
+                <p class="file-note">
+                    Supported formats: PDF, TXT, DOCX, PPTX · Maximum size: 100 MB
+                </p>
+            </div>
+
+            <button type="submit" class="upload-btn">
+                Upload Resource &rarr;
+            </button>
+        </form>
+
+        <p class="upload-footer">
+            Your resource will be submitted for admin approval.
+        </p>
+    </div>
+</div>
+{% endblock %}
+ 

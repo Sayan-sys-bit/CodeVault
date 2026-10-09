@@ -1,0 +1,268 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Sign Up | CodeVault{% endblock %}
+
+{% block body %}
+<style>
+    .auth-page {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px 18px;
+        background:
+    linear-gradient(rgba(5, 10, 25, 0.48), rgba(5, 10, 25, 0.65)),
+    url("/static/images/pngtree-notebook-computer-electronic-equipment-science-and-technology-particles-picture-image_1677481.jpg")
+    center center / cover no-repeat;
+        border-radius: 18px;
+    }
+
+   .auth-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 36px;
+    color: #f8fafc;
+
+    /* 1. Transparency */
+    background: rgba(15, 25, 48, 0.72);
+
+    /* 2. Background blur */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* 3. Glass border */
+    border: 1px solid rgba(148, 180, 255, 0.28);
+    border-radius: 22px;
+
+    /* 4. Blue-purple glow */
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(59, 130, 246, 0.10);
+
+    /* 5. Smooth animation */
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    border-color: rgba(129, 140, 248, 0.48);
+    box-shadow:
+        0 28px 75px rgba(0, 0, 0, 0.42),
+        0 0 35px rgba(99, 102, 241, 0.16);
+}
+
+    /* Transparent glass effect */
+    background: rgba(15, 25, 48, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* Soft glass border */
+    border: 1px solid rgba(148, 180, 255, 0.28);
+    border-radius: 22px;
+
+    /* Depth and subtle blue glow */
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(59, 130, 246, 0.10);
+
+    /* Smooth hover animation */
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    border-color: rgba(129, 140, 248, 0.48);
+
+    box-shadow:
+        0 28px 75px rgba(0, 0, 0, 0.42),
+        0 0 35px rgba(99, 102, 241, 0.16);
+}
+    .auth-logo {
+        width: 190px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        font-size: 29px;
+        font-weight: 800;
+        box-shadow:
+    0 8px 25px rgba(99, 102, 241, 0.30),
+    0 0 35px rgba(99, 102, 241, 0.15);
+    }
+
+    .auth-card h2 {
+        font-size: 28px;
+        font-weight: 750;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .auth-subtitle {
+        color: #aab5cc;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+
+    .auth-card .form-label {
+        color: #dce5f5;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    .auth-card .form-control {
+        padding: 11px 13px;
+        color: #f8fafc;
+        background: #111a2e;
+        border: 1px solid #34415d;
+        border-radius: 11px;
+    }
+
+    .auth-card .form-control::placeholder {
+        color: #8290aa;
+    }
+
+    .auth-card .form-control:focus {
+        background: #111a2e;
+        color: #fff;
+        border-color: #818cf8;
+        box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.17);
+    }
+
+    .auth-btn {
+        width: 100%;
+        padding: 13px;
+        margin-top: 7px;
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 11px;
+        background: linear-gradient(100deg, #3b82f6, #8b5cf6);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .auth-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(99, 102, 241, 0.42);
+    filter: brightness(1.08);
+}
+
+    .auth-footer {
+        color: #aab5cc;
+        text-align: center;
+        margin: 23px 0 0;
+        font-size: 14px;
+    }
+
+    .auth-footer a {
+        color: #a5b4fc;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .auth-footer a:hover {
+        color: #c4b5fd;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+        .auth-card {
+            padding: 28px 22px;
+        }
+
+        .auth-card h2 {
+            font-size: 25px;
+        }
+    }
+</style>
+
+<div class="auth-page">
+    <div class="auth-card">
+        <div class="auth-logo">CodeVault</div>
+
+        <h2>Create Your Account</h2>
+        <p class="auth-subtitle">
+            Join CodeVault and start your learning journey.
+        </p>
+
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    class="form-control"
+                    placeholder="Choose a username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Create a strong password"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <div class="mb-4">
+                <label for="confirm_password" class="form-label">
+                    Confirm Password
+                </label>
+                <input
+                    type="password"
+                    name="confirm_password"
+                    id="confirm_password"
+                    class="form-control"
+                    placeholder="Enter your password again"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="auth-btn">
+                Create Account &rarr;
+            </button>
+        </form>
+
+        <p class="auth-footer">
+            Already have an account?
+            <a href="{% url 'login' %}">Sign In</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+ 

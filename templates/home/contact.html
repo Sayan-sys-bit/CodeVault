@@ -1,0 +1,182 @@
+
+{% extends 'home/base.html' %}
+
+{% block title %}Contact Us | CodeVault{% endblock %}
+
+{% block name %}{% endblock %}
+
+{% block body %}
+
+<style>
+    .contact-section {
+        min-height: 85vh;
+        padding: 55px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+            radial-gradient(circle at 15% 20%,
+                rgba(108, 99, 255, 0.16), transparent 35%),
+            radial-gradient(circle at 85% 80%,
+                rgba(155, 89, 255, 0.12), transparent 35%);
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 720px;
+        padding: 38px;
+        border-radius: 22px;
+        background: rgba(19, 25, 53, 0.88);
+        border: 1px solid rgba(139, 124, 255, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+        color: #f8f9ff;
+    }
+
+    .contact-icon {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        font-size: 26px;
+        background: linear-gradient(135deg, #6554f0, #925cff);
+        margin-bottom: 20px;
+    }
+
+    .contact-card h1 {
+        font-size: 32px;
+        font-weight: 750;
+        margin-bottom: 10px;
+    }
+
+    .contact-subtitle {
+        color: #b9c1dd;
+        margin-bottom: 28px;
+        line-height: 1.7;
+    }
+
+    .contact-card .form-label {
+        color: #e5e7f5;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .contact-card .form-control {
+        background: #0d142b;
+        color: #ffffff;
+        border: 1px solid #343d62;
+        border-radius: 10px;
+        padding: 12px 14px;
+    }
+
+    .contact-card .form-control::placeholder {
+        color: #8993b3;
+    }
+
+    .contact-card .form-control:focus {
+        background: #0d142b;
+        color: #ffffff;
+        border-color: #8b75ff;
+        box-shadow: 0 0 0 3px rgba(139, 117, 255, 0.18);
+    }
+
+    .contact-submit {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 700;
+        background: linear-gradient(110deg, #6554f0, #925cff);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(113, 86, 255, 0.3);
+    }
+
+    @media (max-width: 576px) {
+        .contact-section {
+            padding: 30px 14px;
+        }
+
+        .contact-card {
+            padding: 25px 20px;
+        }
+
+        .contact-card h1 {
+            font-size: 27px;
+        }
+    }
+</style>
+
+<div class="contact-section">
+    <div class="contact-card">
+
+        <div class="contact-icon">✉</div>
+
+        <h1>Let's Talk</h1>
+
+        <p class="contact-subtitle">
+            Have a question, suggestion, or issue?
+            Send us a message and we'll be happy to hear from you.
+        </p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form action="/contact/" method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name"
+                       class="form-control"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email"
+                       class="form-control"
+                       placeholder="you@example.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Mobile Number</label>
+                <input type="tel" id="phone" name="phone"
+                       class="form-control"
+                       placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="content" class="form-label">
+                    How Can We Help?
+                </label>
+                <textarea id="content" name="content"
+                          class="form-control" rows="4"
+                          placeholder="Write your message here..."
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                Send Message &nbsp; →
+            </button>
+        </form>
+
+        <p class="text-center mt-4 mb-0"
+           style="color: #aeb8d6; font-size: 13px;">
+            Thank you for helping us improve CodeVault.
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

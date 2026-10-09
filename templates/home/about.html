@@ -1,0 +1,223 @@
+
+{% extends 'home/base.html' %}
+
+{% block title %}About Us | CodeVault{% endblock %}
+
+{% block name %}{% endblock %}
+
+{% block body %}
+
+<style>
+    .about-section {
+        padding: 60px 20px;
+        min-height: 85vh;
+        color: #f8f9ff;
+        background:
+            radial-gradient(circle at 10% 15%,
+                rgba(108, 99, 255, 0.18), transparent 35%),
+            radial-gradient(circle at 90% 80%,
+                rgba(155, 89, 255, 0.13), transparent 35%);
+    }
+
+    .about-container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .about-hero {
+        text-align: center;
+        padding: 45px 20px 55px;
+    }
+
+    .about-badge {
+        display: inline-block;
+        color: #c4baff;
+        background: rgba(108, 99, 255, 0.14);
+        border: 1px solid rgba(139, 124, 255, 0.3);
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(34px, 5vw, 54px);
+        font-weight: 800;
+        margin-bottom: 18px;
+    }
+
+    .about-hero h1 span {
+        background: linear-gradient(90deg, #8273ff, #d1a5ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .about-hero p {
+        max-width: 720px;
+        margin: auto;
+        color: #bdc5df;
+        line-height: 1.9;
+        font-size: 17px;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin: 15px 0 45px;
+    }
+
+    .about-card {
+        padding: 28px;
+        border-radius: 18px;
+        background: rgba(19, 25, 53, 0.82);
+        border: 1px solid rgba(139, 124, 255, 0.22);
+        transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .about-card:hover {
+        transform: translateY(-5px);
+        border-color: #8170ff;
+    }
+
+    .about-icon {
+        font-size: 29px;
+        margin-bottom: 17px;
+    }
+
+    .about-card h3 {
+        font-size: 19px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .about-card p {
+        color: #b9c1dd;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    .about-mission {
+        padding: 35px;
+        border-radius: 20px;
+        background: linear-gradient(
+            120deg,
+            rgba(101, 84, 240, 0.19),
+            rgba(146, 92, 255, 0.08)
+        );
+        border: 1px solid rgba(139, 124, 255, 0.28);
+        text-align: center;
+    }
+
+    .about-mission h2 {
+        font-size: 28px;
+        font-weight: 750;
+        margin-bottom: 15px;
+    }
+
+    .about-mission p {
+        max-width: 760px;
+        margin: auto;
+        color: #c3cbe3;
+        line-height: 1.9;
+    }
+
+    .about-button {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px 23px;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        background: linear-gradient(110deg, #6554f0, #925cff);
+        transition: transform 0.2s;
+    }
+
+    .about-button:hover {
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-hero {
+            padding: 25px 5px 40px;
+        }
+
+        .about-mission {
+            padding: 28px 20px;
+        }
+    }
+</style>
+
+<section class="about-section">
+    <div class="about-container">
+
+        <div class="about-hero">
+            <div class="about-badge">ABOUT CODEVAULT</div>
+
+            <h1>
+                Learn Better. <span>Build Smarter.</span>
+            </h1>
+
+            <p>
+                CodeVault is a programming learning platform designed
+                to bring useful books, study materials, and coding
+                resources together in one convenient place.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+                <div class="about-icon">📚</div>
+                <h3>Learning Resources</h3>
+                <p>
+                    Explore programming books, reference materials,
+                    and study resources to support your learning journey.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">💻</div>
+                <h3>Multiple Languages</h3>
+                <p>
+                    Discover learning materials for Python, Java,
+                    C, C++, and other programming technologies.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-icon">🚀</div>
+                <h3>Grow Your Skills</h3>
+                <p>
+                    Strengthen your fundamentals, explore new concepts,
+                    and find resources for your next coding project.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="about-mission">
+            <h2>Our Mission</h2>
+
+            <p>
+                Our goal is to make programming resources easier to
+                discover and access, helping learners build strong
+                foundations and continue developing their technical skills.
+            </p>
+
+             
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
