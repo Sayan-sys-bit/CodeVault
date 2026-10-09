@@ -14,7 +14,7 @@ psycopg2-binary==2.9.13
 pypiwin32==223
 python-discovery==1.6.1
 pyttsx3==2.98
-pywin32==310
+ 
 requests==2.33.1
 sqlparse==0.5.5
 tzdata==2025.3
