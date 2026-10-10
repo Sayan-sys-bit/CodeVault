@@ -1,0 +1,49 @@
+
+{% extends 'home/base.html' %}
+
+{% block title %}My Submissions | CodeVault{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1>My Submissions</h1>
+    <p>Check the approval status of your uploaded materials.</p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% for resource in resources %}
+        <div class="card p-3 mb-3">
+            <h5>{{ resource.title }}</h5>
+            <p>{{ resource.description|truncatechars:200 }}</p>
+
+            <p>
+                Status:
+                <strong>{{ resource.get_status_display }}</strong>
+            </p>
+
+            {% if resource.status == 'pending' %}
+                <p>Your material is waiting for admin approval.</p>
+            {% elif resource.status == 'approved' %}
+                <p>Your material has been approved and published.</p>
+                <a
+                    href="{% url 'resource_download' resource.pk %}"
+                    class="btn btn-success">
+                    Download Material
+                </a>
+            {% elif resource.status == 'rejected' %}
+                <p>Your material was not approved.</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>You have not uploaded any materials yet.</p>
+        <a href="{% url 'upload_resource' %}" class="btn btn-primary">
+            Upload Material
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

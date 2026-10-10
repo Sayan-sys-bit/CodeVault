@@ -15,6 +15,11 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('login/', views.login_view, name='login'),
     path('signup/', views.signup_view, name='signup'),
+    path(
+    'media/community_resources/<path:filename>',
+    views.block_direct_community_media,
+    name='block_direct_community_media',
+    ),
     path('blog/', include('blog.urls')),
     path(
         'logout/',
