@@ -1,24 +1,39 @@
 # ⚡ CodeVault — Your Developer Knowledge Hub
 
-**Less searching. More building.**
+### Less searching. More building.
 
-CodeVault is a Django-powered platform designed to bring programming resources and code examples together in one organized space. Built for students, aspiring developers, and coding enthusiasts, it aims to make learning resources easier to discover, access, and explore.
+**CodeVault** is a Django-powered web platform designed to help students and aspiring developers discover programming resources, explore code examples, and organize useful learning materials in one place.
 
-🎯 **One goal:** Spend less time hunting for resources and more time turning knowledge into working code.
+Built with Python and Django, CodeVault brings together developer-focused content in an organized web interface, with a community resource submission workflow to support collaborative learning.
 
-### ✨ What makes CodeVault worth exploring?
+## ✨ Key Features
 
-- 📚 **Resource Library** — Access programming learning materials in one place.
-- 💻 **Code Examples** — Explore practical programming examples and snippets.
-- 🔎 **Organized Learning** — Find resources more easily with a structured platform.
-- 🌐 **Web-Based Access** — Explore your resources through a web interface.
+- 📚 **Learning Resource Library** — A centralized space for programming and educational materials.
+- 🤝 **Community Contributions** — Logged-in users can submit learning resources for review.
+- 🛡️ **Admin Approval Workflow** — Administrators can review submissions before approving or rejecting them.
+- 💻 **Programming Content** — Explore programming-related posts and useful code examples.
+- 🔎 **Search Functionality** — Find relevant content more conveniently.
+- 👤 **User Management** — Django-powered authentication and user administration.
 
-### 🛠️ Built With
+## 🛠️ Tech Stack
 
-Python · Django · HTML · CSS · Bootstrap
+- **Backend:** Python, Django
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite for local development
 
-### 🚀 The Vision
+## 🎯 Project Goal
 
-CodeVault aims to become a unified destination for discovering programming knowledge, revisiting useful resources, and building stronger development skills.
+CodeVault aims to make programming knowledge easier to discover and share by bringing useful learning resources and community contributions into one platform.
 
-**Explore the repository, discover how it works, and follow its evolution.**
+## 🚀 Future Improvements
+
+- Enhanced resource discovery and filtering
+- Improved user profiles and contribution tracking
+- A more responsive and polished user interface
+- Additional programming categories and learning materials
+
+## 💡 Why CodeVault?
+
+CodeVault is a practical project exploring Django web development, authentication, database models, file handling, and administrative workflows—all within a developer-focused learning platform.
+
+**Explore the code, understand the implementation, and follow the project's evolution.**
