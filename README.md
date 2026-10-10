@@ -32,6 +32,13 @@ CodeVault aims to make programming knowledge easier to discover and share by bri
 - A more responsive and polished user interface
 - Additional programming categories and learning materials
 
+## 📸 Screenshots
+
+### Homepage
+![CodeVault Homepage](screenshots/homepage.jpeg)
+
+### Resource Upload
+![CodeVault Resource Upload](screenshots/upload_resource.jpeg)
 ## 💡 Why CodeVault?
 
 CodeVault is a practical project exploring Django web development, authentication, database models, file handling, and administrative workflows—all within a developer-focused learning platform.
