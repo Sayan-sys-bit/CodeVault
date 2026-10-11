@@ -1,0 +1,182 @@
+[
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "title": "Think Python",
+    "slug": "think-python",
+    "author": "Allen Downey",
+    "content": "Think Python is a programming textbook by Allen B. Downey that teaches Python through practical examples and core computer science concepts. It is widely used for self-study and introductory programming courses because it emphasizes problem solving, clear explanations, and building a strong foundation before moving to more advanced topics.",
+    "timeStamp": "2026-10-08T15:12:16.546Z",
+    "pdf": "programming_pdfs/thinkpython2.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 4,
+  "fields": {
+    "title": "Python for Everybody",
+    "slug": "python-for-everybody",
+    "author": "Dr. Charles R. Severance",
+    "content": "It is quite natural for academics who are continuously told to “publish or perish”\r\nto want to always create something from scratch that is their own fresh creation.\r\nThis book is an experiment in not starting from scratch, but instead “remixing”\r\nthe book titled Think Python: How to Think Like a Computer Scientist written\r\nby Allen B. Downey, Jeff Elkner, and others.",
+    "timeStamp": "2026-10-09T05:38:52.400Z",
+    "pdf": "programming_pdfs/pythonlearn.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 5,
+  "fields": {
+    "title": "The Coder’s Apprentice (Learning Programming with)",
+    "slug": "the-coders-apprentice-learning-programming-with",
+    "author": "Pieter Spronck",
+    "content": "Learning Programming with Python 3",
+    "timeStamp": "2026-10-09T05:42:41.305Z",
+    "pdf": "programming_pdfs/pythonbook.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 6,
+  "fields": {
+    "title": "Intermediate Python",
+    "slug": "intermediate-python",
+    "author": "Muhammad Yasoob Ullah Khalid",
+    "content": "Python Tips",
+    "timeStamp": "2026-10-09T05:45:32.365Z",
+    "pdf": "programming_pdfs/book-pythontips-com-en-latest.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 7,
+  "fields": {
+    "title": "Python Problem Solving",
+    "slug": "python-problem-solving",
+    "author": "John B. Schneider Shira Lynn Broschat",
+    "content": "Algorithmic Problem Solving with Python",
+    "timeStamp": "2026-10-09T05:47:51.101Z",
+    "pdf": "programming_pdfs/swan.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 8,
+  "fields": {
+    "title": "Python Guide",
+    "slug": "python-guide",
+    "author": "Kenneth Reitz",
+    "content": "Python Guide Documentation",
+    "timeStamp": "2026-10-09T05:49:51.287Z",
+    "pdf": "programming_pdfs/docs-python-guide-org-en-latest.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 9,
+  "fields": {
+    "title": "Programming Using Java",
+    "slug": "programming-using-java",
+    "author": "David J. Eck Hobart and William Smith Colleges",
+    "content": "Introduction to Programming Using Java",
+    "timeStamp": "2026-10-09T05:53:47.188Z",
+    "pdf": "programming_pdfs/javanotes9.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 10,
+  "fields": {
+    "title": "DSA in Java",
+    "slug": "dsa-in-java",
+    "author": "Pat Morin",
+    "content": "There are plenty of books that teach introductory data structures. Some of them are very\r\ngood. Most of them cost money, and the vast majority of computer science undergraduate\r\nstudents will shell-out at least some cash on a data structures book.",
+    "timeStamp": "2026-10-09T05:56:42.302Z",
+    "pdf": "programming_pdfs/open-data-structures-in-java.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 11,
+  "fields": {
+    "title": "Java Object-Oriented Problem Solving",
+    "slug": "java-object-oriented-problem-solving",
+    "author": "R. Morelli and R. Walde Trinity College Hartford,",
+    "content": "Java, Java, Java\r\nObject-Oriented Problem Solving\r\nThird Edition",
+    "timeStamp": "2026-10-09T05:57:57.614Z",
+    "pdf": "programming_pdfs/java-java-java.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 12,
+  "fields": {
+    "title": "Think C++",
+    "slug": "think-c",
+    "author": "Allen B. Downey",
+    "content": "The goal of this book is to teach you to think like a computer scientist. I like\r\nthe way computer scientists think because they combine some of the best fea\r\ntures of Mathematics, Engineering, and Natural Science. Like mathematicians,\r\ncomputer scientists use formal languages to denote ideas (specifically computa\r\ntions). Like engineers, they design things, assembling components into systems\r\nand evaluating tradeoffs among alternatives. Like scientists, they observe the\r\nbehavior of complex systems, form hypotheses, and test predictions.",
+    "timeStamp": "2026-10-09T06:00:06.815Z",
+    "pdf": "programming_pdfs/how-to-think-like-a-computer-scientist-cplusplus-version.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 13,
+  "fields": {
+    "title": "C++ guide",
+    "slug": "c-guide",
+    "author": "Unknown",
+    "content": "A full guide to c++",
+    "timeStamp": "2026-10-09T06:03:43.884Z",
+    "pdf": "programming_pdfs/the-rooks-guide-to-cplusplus.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 14,
+  "fields": {
+    "title": "Introduction to Scientific Programming in C++",
+    "slug": "introduction-to-scientific-programming-in-c",
+    "author": "Victor Eijkhout",
+    "content": "Introduction to Scientific Programming in C++",
+    "timeStamp": "2026-10-09T06:07:41.550Z",
+    "pdf": "programming_pdfs/EijkhoutIntroSciProgramming-book-1.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 15,
+  "fields": {
+    "title": "Modern C",
+    "slug": "modern-c",
+    "author": "Jens Gustedt",
+    "content": "Fundamental of C language",
+    "timeStamp": "2026-10-09T06:10:16.764Z",
+    "pdf": "programming_pdfs/modern-c.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 16,
+  "fields": {
+    "title": "C for Java Programmers",
+    "slug": "cfor-java-programmers",
+    "author": "George Ferguson",
+    "content": "C for Java Programmers",
+    "timeStamp": "2026-10-09T06:12:34.191Z",
+    "pdf": "programming_pdfs/c-for-java-programmers_WTEvhND.pdf"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 17,
+  "fields": {
+    "title": "How to Think Like a Computer Scientist -C version",
+    "slug": "how-to-think-like-a-computer-scientist-c-version",
+    "author": "Thomas Scheffler",
+    "content": "How to Think Like a Computer Scientist -C version",
+    "timeStamp": "2026-10-09T06:14:03.164Z",
+    "pdf": "programming_pdfs/Think-C.pdf"
+  }
+}
+]

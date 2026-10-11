@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Post Import</title>
+</head>
+<body>
+    <h2>Import Blog Posts</h2>
+
+    <p>Select your local posts.json backup file.</p>
+
+    <form method="post"
+          action="{% url 'temporary_import_posts' %}"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".json" required>
+        <button type="submit">Import Posts</button>
+    </form>
+</body>
+</html>
