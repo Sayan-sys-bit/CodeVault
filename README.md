@@ -2,6 +2,8 @@
 
 ### Less searching. More building.
 
+**🚀 [Visit the Live Website](https://codevault-car5.onrender.com)**
+
 **CodeVault** is a Django-powered web platform designed to help students and aspiring developers discover programming resources, explore code examples, and organize useful learning materials in one place.
 
 Built with Python and Django, CodeVault brings together developer-focused content in an organized web interface, with a community resource submission workflow to support collaborative learning.
@@ -19,7 +21,7 @@ Built with Python and Django, CodeVault brings together developer-focused conten
 
 - **Backend:** Python, Django
 - **Frontend:** HTML, CSS, Bootstrap
-- **Database:** SQLite for local development
+- **Database:** SQLite for local development, PostgreSQL on Render
 
 ## 🎯 Project Goal
 
@@ -35,13 +37,18 @@ CodeVault aims to make programming knowledge easier to discover and share by bri
 ## 📸 Screenshots
 
 ### Homepage
+
 ![CodeVault Homepage](screenshots/homepage.jpeg)
 
 ### Resource Upload
 
 ![CodeVault Resource Upload](screenshots/upload_resources.jpeg)
+
 ## 💡 Why CodeVault?
 
 CodeVault is a practical project exploring Django web development, authentication, database models, file handling, and administrative workflows—all within a developer-focused learning platform.
 
-**Explore the code, understand the implementation, and follow the project's evolution.**
+**Explore the code, try the live application, and follow the project's evolution.**
+
+🔗 **Live Demo:** https://codevault-car5.onrender.com
+
